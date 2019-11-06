@@ -19,8 +19,17 @@
       "themeColor": "deep-purple darken-4"
     },
     {
-      "name": "code",
-      "title": "代码",
+      "name": "basic",
+      "title": "基础",
+      "type": "code",
+      "icon": "fa-tasks",
+      "folderIcon": "fa-folder",
+      "itemIcon": "fa-file-code-o",
+      "themeColor": "deep-purple darken-4"
+    },
+    {
+      "name": "extension",
+      "title": "扩展",
       "type": "code",
       "icon": "fa-tasks",
       "folderIcon": "fa-folder",

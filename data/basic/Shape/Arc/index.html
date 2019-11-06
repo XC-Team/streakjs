@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Arc</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>   
+    <div id="container"></div>
+    <script src="../../../../lib/streakjs/streakjs.js"></script>
+    <script> 
+        var stage = new streakjs.Stage({
+            container: 'container',
+            width: 320,
+            height: 180
+        });
+
+        var layer = new streakjs.Layer();
+
+        var arc = new streakjs.shapes.Arc({
+            x: stage.width / 2,
+            y: stage.height / 2,
+            innerRadius: 0,
+            outerRadius: 60,
+            angle: 60,
+            fill: 'red',
+            stroke: 'black',
+            strokeWidth: 4
+        });
+       
+        layer.add(arc);
+       
+        stage.add(layer);
+    </script>
+
+</body>
+
+</html>
