@@ -160,9 +160,8 @@ var CodeComponent = Vue.component('code-component', {
     },
 
     beforeRouteUpdate(to, from, next) {
-        if (to.fullPath != from.fullPath) {
-           
-            console.log(to, from)
+        if (to.fullPath != from.fullPath) {           
+         
             next();
 
             this.load();
