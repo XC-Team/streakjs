@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>圆弧</title>
+    <title>图片</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -21,32 +21,37 @@
     </style>
 </head>
 
-<body>   
+<body>
     <div id="container"></div>
     <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
-    <script> 
-        var stage = new streakjs.Stage({
-            container: 'container',
-            width: 640,
-            height: 480
+    <script>
+        streakjs.loader.loadImage('images/img-1.png', (res) => {
+            var stage = new streakjs.Stage({
+                container: 'container',
+                width: 640,
+                height: 480
+            });
+
+            var layer = new streakjs.Layer();
+
+            var img = new streakjs.shapes.Image({
+                x: 50,
+                y: 50,
+                image: res,
+                width: 200,
+                height: 150,
+            });
+
+
+            layer.add(img);
+
+            stage.add(layer);
         });
 
-        var layer = new streakjs.Layer();
 
-        var arc = new streakjs.shapes.Arc({
-            x: stage.width / 2,
-            y: stage.height / 2,
-            innerRadius: 30,
-            outerRadius: 60,
-            angle: 160,
-            fill: 'red',
-            stroke: 'black',
-            strokeWidth: 4
-        });
-       
-        layer.add(arc);
-       
-        stage.add(layer);
+
+
+
     </script>
 
 </body>

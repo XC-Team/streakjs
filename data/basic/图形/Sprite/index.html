@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>精灵</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
+    <script>
+        var animations = {
+            idle: [
+                2, 2, 70, 119,
+                71, 2, 74, 119,
+                146, 2, 81, 119,
+                226, 2, 76, 119
+            ],
+            punch: [
+                2, 138, 74, 122,
+                76, 138, 84, 122,
+                346, 138, 120, 122
+            ]
+        };
+
+        streakjs.loader.loadImage('images/sprite.png', (res) => {
+
+            var stage = new streakjs.Stage({
+                container: 'container',
+                width: 640,
+                height: 480
+            });
+
+            var layer = new streakjs.Layer();
+
+            sprite = new streakjs.shapes.Sprite({
+                x: 50,
+                y: 50,
+                image: res,
+                animation: 'idle',
+                animations: animations,
+                frameRate: 7,
+                frameIndex: 0
+            });
+
+            layer.add(sprite);
+
+            stage.add(layer);
+
+            sprite.start();
+        });        
+    </script>
+
+</body>
+
+</html>

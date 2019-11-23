@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>圆弧</title>
+    <title>文本路径</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -21,10 +21,10 @@
     </style>
 </head>
 
-<body>   
+<body>
     <div id="container"></div>
     <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
-    <script> 
+    <script>
         var stage = new streakjs.Stage({
             container: 'container',
             width: 640,
@@ -33,20 +33,20 @@
 
         var layer = new streakjs.Layer();
 
-        var arc = new streakjs.shapes.Arc({
-            x: stage.width / 2,
-            y: stage.height / 2,
-            innerRadius: 30,
-            outerRadius: 60,
-            angle: 160,
-            fill: 'red',
-            stroke: 'black',
-            strokeWidth: 4
+        var textpath = new streakjs.shapes.TextPath({
+            x: 10,
+            y: 100,
+            fill: '#333',
+            fontSize: 16,
+            text:
+                "多端JavaScript Canvas框架streakjs",
+            data: 'M10,10 C0,0 10,150 100,100 S300,150 4.0.140'
         });
-       
-        layer.add(arc);
-       
-        stage.add(layer);
+
+
+        layer.add(textpath);
+
+        stage.add(layer); 
     </script>
 
 </body>

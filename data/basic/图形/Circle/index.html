@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Circle</title>
+    <title>圆形</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -27,8 +27,8 @@
     <script>
         var stage = new streakjs.Stage({
             container: 'container',
-            width: 320,
-            height: 180
+            width: 640,
+            height: 480
         });
 
         var layer = new streakjs.Layer();   
@@ -39,12 +39,7 @@
             radius: 70,
             fill: 'red',
             stroke: 'black',
-            strokeWidth: 4,
-            draggable: true,          
-            opacity: 0.5,
-            shadowBlur: 10,
-            shadowOffset: 10,
-            shadowOpacity: 0.5
+            strokeWidth: 4  
         });
 
         layer.add(circle);

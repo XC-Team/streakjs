@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>线条</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
+    <script>
+        var stage = new streakjs.Stage({
+            container: 'container',
+            width: 640,
+            height: 480
+        });
+
+        var layer = new streakjs.Layer();
+
+        var redLine = new streakjs.shapes.Line({
+            points: [5, 70, 140, 23, 250, 60, 300, 20],
+            stroke: 'red',
+            strokeWidth: 15,
+            lineCap: 'round',
+            lineJoin: 'round'
+        });
+
+        var greenLine = new streakjs.shapes.Line({
+            points: [5, 70, 140, 23, 250, 60, 300, 20],
+            stroke: 'green',
+            strokeWidth: 2,
+            lineJoin: 'round',
+            dash: [33, 10]
+        });
+
+        var blueLine = new streakjs.shapes.Line({
+            points: [5, 70, 140, 23, 250, 60, 300, 20],
+            stroke: 'blue',
+            strokeWidth: 10,
+            lineCap: 'round',
+            lineJoin: 'round',
+            dash: [29, 20, 0.001, 20]
+        });
+
+        var blob = new streakjs.shapes.Line({
+            points: [23, 20, 23, 160, 70, 93, 150, 109, 290, 139, 270, 93],
+            fill: '#00D2FF',
+            stroke: 'black',
+            strokeWidth: 5,
+            closed: true,
+            tension: 0.3
+        });
+
+        layer.add(blob);
+
+        redLine.move({
+            x: 5,
+            y: 150
+        });
+
+        greenLine.move({
+            x: 5,
+            y: 175
+        });
+
+        blueLine.move({
+            x: 5,
+            y: 200
+        });
+
+        layer.add(redLine);
+        layer.add(greenLine);
+        layer.add(blueLine);
+        layer.add(blob);
+
+        stage.add(layer); 
+    </script>
+
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "node ./build/build.js",
-    "start": "http-server ./ -p50000 -c-1 -o"
+    "start": "http-server ./ -p8088 -c-1 -o"
   },
   "author": "guyoung",
   "homepage": "https://github.com/guyoung/CodeInstant",
