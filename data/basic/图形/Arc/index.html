@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Arrow</title>
+    <title>Arc</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -21,10 +21,10 @@
     </style>
 </head>
 
-<body>
+<body>   
     <div id="container"></div>
-    <script src="https://guyoung.github.io/streakjs/lib/streakjs/streakjs.min.js"></script>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
+    <script> 
         var stage = new streakjs.Stage({
             container: 'container',
             width: 320,
@@ -33,19 +33,19 @@
 
         var layer = new streakjs.Layer();
 
-        var arrow = new streakjs.shapes.Arrow({
-            x: stage.width / 4,
-            y: stage.height / 4,
-            points: [0, 0, stage.width / 2, stage.height / 2],
-            pointerLength: 20,
-            pointerWidth: 20,
-            fill: 'black',
+        var arc = new streakjs.shapes.Arc({
+            x: stage.width / 2,
+            y: stage.height / 2,
+            innerRadius: 0,
+            outerRadius: 60,
+            angle: 60,
+            fill: 'red',
             stroke: 'black',
             strokeWidth: 4
         });
-
-        layer.add(arrow);
-
+       
+        layer.add(arc);
+       
         stage.add(layer);
     </script>
 

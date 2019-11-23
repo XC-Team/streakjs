@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Blob</title>
+    <title>Circle</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -23,7 +23,7 @@
 
 <body>
     <div id="container"></div>
-    <script src="https://guyoung.github.io/streakjs/lib/streakjs/streakjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
     <script>
         var stage = new streakjs.Stage({
             container: 'container',
@@ -31,21 +31,25 @@
             height: 180
         });
 
+        var layer = new streakjs.Layer();   
 
-        var layer = new streakjs.Layer();
-
-        var blob = new streakjs.shapes.Line({
-            points: [23, 20, 23, 160, 70, 93, 150, 109, 290, 139, 270, 93],
-            fill: '#00D2FF',
+        var circle = new streakjs.shapes.Circle({
+            x: stage.width / 2,
+            y: stage.height / 2,
+            radius: 70,
+            fill: 'red',
             stroke: 'black',
-            strokeWidth: 5,
-            closed: true,
-            tension: 0.3
+            strokeWidth: 4,
+            draggable: true,          
+            opacity: 0.5,
+            shadowBlur: 10,
+            shadowOffset: 10,
+            shadowOpacity: 0.5
         });
 
-        layer.add(blob);
+        layer.add(circle);
 
-        stage.add(layer);
+        stage.add(layer); 
     </script>
 
 </body>

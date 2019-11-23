@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Circle</title>
+    <title>Arrow</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -23,7 +23,7 @@
 
 <body>
     <div id="container"></div>
-    <script src="https://guyoung.github.io/streakjs/lib/streakjs/streakjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
     <script>
         var stage = new streakjs.Stage({
             container: 'container',
@@ -31,25 +31,22 @@
             height: 180
         });
 
-        var layer = new streakjs.Layer();   
+        var layer = new streakjs.Layer();
 
-        var circle = new streakjs.shapes.Circle({
-            x: stage.width / 2,
-            y: stage.height / 2,
-            radius: 70,
-            fill: 'red',
+        var arrow = new streakjs.shapes.Arrow({
+            x: stage.width / 4,
+            y: stage.height / 4,
+            points: [0, 0, stage.width / 2, stage.height / 2],
+            pointerLength: 20,
+            pointerWidth: 20,
+            fill: 'black',
             stroke: 'black',
-            strokeWidth: 4,
-            draggable: true,          
-            opacity: 0.5,
-            shadowBlur: 10,
-            shadowOffset: 10,
-            shadowOpacity: 0.5
+            strokeWidth: 4
         });
 
-        layer.add(circle);
+        layer.add(arrow);
 
-        stage.add(layer); 
+        stage.add(layer);
     </script>
 
 </body>

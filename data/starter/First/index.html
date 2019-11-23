@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Arc</title>
+    <title>第一个程序</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -21,32 +21,30 @@
     </style>
 </head>
 
-<body>   
+<body>
     <div id="container"></div>
-    <script src="https://guyoung.github.io/streakjs/lib/streakjs/streakjs.min.js"></script>
-    <script> 
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
+    <script>
         var stage = new streakjs.Stage({
             container: 'container',
-            width: 320,
-            height: 180
+            width: 640,
+            height: 480
         });
 
-        var layer = new streakjs.Layer();
+        var layer = new streakjs.Layer(
+        );
 
-        var arc = new streakjs.shapes.Arc({
+        var circle = new streakjs.shapes.Circle({
             x: stage.width / 2,
             y: stage.height / 2,
-            innerRadius: 0,
-            outerRadius: 60,
-            angle: 60,
+            radius: 70,
             fill: 'red',
-            stroke: 'black',
-            strokeWidth: 4
+            stroke: 'black'
         });
-       
-        layer.add(arc);
-       
-        stage.add(layer);
+
+        layer.add(circle);
+
+        stage.add(layer); 
     </script>
 
 </body>

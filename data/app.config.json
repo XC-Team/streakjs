@@ -19,8 +19,17 @@
       "themeColor": "deep-purple darken-4"
     },
     {
+      "name": "starter",
+      "title": "开始使用",
+      "type": "code",
+      "icon": "fa-tasks",
+      "folderIcon": "fa-folder",
+      "itemIcon": "fa-file-code-o",
+      "themeColor": "deep-purple darken-4"
+    },
+    {
       "name": "basic",
-      "title": "基础",
+      "title": "基础功能",
       "type": "code",
       "icon": "fa-tasks",
       "folderIcon": "fa-folder",
@@ -29,7 +38,7 @@
     },
     {
       "name": "extension",
-      "title": "扩展",
+      "title": "扩展功能",
       "type": "code",
       "icon": "fa-tasks",
       "folderIcon": "fa-folder",
