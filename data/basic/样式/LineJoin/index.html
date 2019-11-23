@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>第一个程序</title>
+    <title>线条相交拐点</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
     <meta name="screen-orientation" content="portrait" />
@@ -31,18 +31,20 @@
             height: 480
         });
 
-        var layer = new streakjs.Layer(
-        );
+        var layer = new streakjs.Layer();   
 
-        var circle = new streakjs.shapes.Circle({
-            x: stage.width / 2,
-            y: stage.height / 2,
-            radius: 70,
-            fill: 'red',
-            stroke: 'black'
-        });
+        var triangle = new streakjs.shapes.RegularPolygon({
+        x: stage.width / 2,
+        y: stage.height / 2,
+        sides: 3,
+        radius: 70,
+        fill: 'red',
+        stroke: 'black',
+        strokeWidth: 20,
+        lineJoin: 'round'
+    });
 
-        layer.add(circle);
+    layer.add(triangle);
 
         stage.add(layer); 
     </script>

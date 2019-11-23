@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>选择器</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/streakjs/dist/streakjs.min.js"></script>
+    <script>
+        var stage = new streakjs.Stage({
+            container: 'container',
+            width: 640,
+            height: 480
+        });
+
+        var layer = new streakjs.Layer();
+        
+        var circle1 = new streakjs.shapes.Circle({
+            x: stage.width / 2,
+            y: 75,
+            radius: 50,
+            fill: 'red',
+            stroke: 'black',
+            strokeWidth: 4,
+            id: 'circle1',
+            name: 'circle1'
+        });
+
+        var circle2 = new streakjs.shapes.Circle({
+            x: stage.width / 2,
+            y: 200,
+            radius: 50,
+            fill: 'green',
+            stroke: 'black',
+            strokeWidth: 4,
+            id: 'circle2',
+            name: 'circle2'
+
+        });
+
+        var text1 = new streakjs.shapes.Text({
+            x: 50,
+            y: stage.height - 50,
+            text: '移动',
+            fontSize: 24,
+            padding: 5,
+            fill: 'black'
+        })
+
+        text1.on('click', function (e) {
+            var shape = layer.find('#circle1')[0];
+
+            if (shape.x < stage.width) {
+                shape.x++;
+            } else {
+                shape.x = 0;
+            }
+
+            layer.draw();
+
+        });
+
+
+        var text2 = new streakjs.shapes.Text({
+            x: 150,
+            y: stage.height - 50,
+            text: '移动',
+            fontSize: 24,
+            padding: 5,
+            fill: 'black'
+        })
+
+        text2.on('click', function (e) {
+            var shape = layer.find('.circle2')[0];
+
+            if (shape.x < stage.width) {
+                shape.x++;
+            } else {
+                shape.x = 0;
+            }
+
+            layer.draw();
+
+        });
+
+        var text3 = new streakjs.shapes.Text({
+            x: 250,
+            y: stage.height - 50,
+            text: '移动',
+            fontSize: 24,
+            padding: 5,
+            fill: 'black'
+        })
+
+
+        text3.on('click', function (e) {
+            var shapes = layer.find('Circle');
+
+            shapes.forEach(shape => {
+                if (shape.x < stage.width) {
+                    shape.x++;
+                } else {
+                    shape.x = 0;
+                }
+
+            });
+
+            layer.draw();
+
+        });
+
+
+        layer.add(circle1);
+        layer.add(circle2);
+        layer.add(text1);
+        layer.add(text2);
+        layer.add(text3);
+
+
+        stage.add(layer); 
+    </script>
+
+</body>
+
+</html>
